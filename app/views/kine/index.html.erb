@@ -1,0 +1,27 @@
+<h1>Listing kine</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Zipcode</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @kine.each do |cow| %>
+  <tr>
+    <td><%= cow.name %></td>
+    <td><%= cow.age %></td>
+    <td><%= cow.zipcode %></td>
+    <td><%= link_to 'Show', cow %></td>
+    <td><%= link_to 'Edit', edit_cow_path(cow) %></td>
+    <td><%= link_to 'Destroy', cow, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cow', new_cow_path %>
